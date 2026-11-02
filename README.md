@@ -1,3 +1,4 @@
+
 # Enterprise RAG Assistant
 
 An AI-powered document question-answering application built using Retrieval-Augmented Generation (RAG). It allows users to upload PDF documents, retrieve relevant information through semantic search, and generate context-based answers using a locally running Large Language Model.
@@ -32,6 +33,32 @@ The dashboard contains five sections:
 4. Evaluation Centre
 5. System Settings
 
+## Application Screenshots
+
+### 1. System Overview
+
+![System Overview](screenshots/1_system_overview.png)
+
+### 2. Knowledge Base
+
+![Knowledge Base](screenshots/2_knowledge_base.png)
+
+### 3. Knowledge Search — Answer Found
+
+![Answer Found](screenshots/3_knowledge_search_Answer_found.png)
+
+### 4. Knowledge Search — Answer Not Found
+
+![Answer Not Found](screenshots/4_knowledge_search_Answer_not_found.png)
+
+### 5. Evaluation Centre
+
+![Evaluation Centre](screenshots/5_evaluation_centre.png)
+
+### 6. System Settings
+
+![System Settings](screenshots/6_system_settings.png)
+
 ## Technology Stack
 
 | Component | Technology |
@@ -48,43 +75,42 @@ The dashboard contains five sections:
 ## RAG Architecture
 
 ```text
-              PDF Documents
-                    |
-                    v
-             PDF Text Extraction
-                    |
-                    v
-               Text Chunking
-                    |
-                    v
-             MiniLM Embeddings
-                    |
-                    v
-                ChromaDB
-                    |
-                    |
-User Question ------+
-       |
-       v
-Question Embedding
-       |
-       v
-Semantic Retrieval
-       |
-       v
-Relevant Document Chunks
-       |
-       v
-     RAG Prompt
-       |
-       v
-   Qwen 2.5 3B
-       |
-       v
- Generated Answer
-       |
-       v
- Answer + Source References
+PDF Documents
+      |
+      v
+PDF Text Extraction
+      |
+      v
+Text Chunking
+      |
+      v
+MiniLM Embeddings
+      |
+      v
+ChromaDB
+      |
+      +---------- User Question
+                       |
+                       v
+               Question Embedding
+                       |
+                       v
+               Semantic Retrieval
+                       |
+                       v
+             Relevant Document Chunks
+                       |
+                       v
+                   RAG Prompt
+                       |
+                       v
+                 Qwen 2.5 3B
+                       |
+                       v
+                Generated Answer
+                       |
+                       v
+             Answer + Source References
 ```
 
 ## Project Structure
@@ -114,6 +140,8 @@ Enterprise_RAG_Assistant/
 |
 |-- tests/
 |
+|-- screenshots/
+|
 |-- requirements.txt
 |-- .gitignore
 |-- README.md
@@ -124,7 +152,7 @@ Enterprise_RAG_Assistant/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/susalavishnuvardhan227-art/Enterprise_RAG_Assistant.git
 cd Enterprise_RAG_Assistant
 ```
 
